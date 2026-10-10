@@ -1,0 +1,27 @@
+﻿    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program38
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            int n = 8;                 // Исходное число: 00001000
+            int bitIndex = 2;          // Хотим установить 2-й бит
+
+            // Создаём маску и устанавливаем бит
+            int mask = 1 << bitIndex; // 00000100 (4)
+            n |= mask;                 // Эквивалентно: n = n | mask
+
+            string binN = Convert.ToString(n, 2).PadLeft(8, '0');
+            string binMask = Convert.ToString(mask, 2).PadLeft(8, '0');
+
+            Console.WriteLine($"Исходное n: 8 → двоичное: 00001000");
+            Console.WriteLine($"Маска (1 << {bitIndex}): {mask} → двоичное: {binMask}");
+            Console.WriteLine($"Новое n: {n} → двоичное: {binN}");
+        }
+        }
